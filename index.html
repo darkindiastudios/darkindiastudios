@@ -201,6 +201,17 @@ textarea {
   height: 100%;
   object-fit: cover;
 }
+/* ---------- HERO IMAGE HOVER EFFECT ---------- */
+.hero-image img {
+  filter: blur(3px);
+  transform: scale(1.05);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.hero-image:hover img {
+  filter: blur(0);
+  transform: scale(1);
+}
 
 /* Hide hero image on mobile */
 @media (max-width: 900px) {
