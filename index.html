@@ -204,49 +204,81 @@ textarea {
   border: 1px solid var(--border);
 }
 
-/* ---------- WORK ---------- */
-<section id="work">
-  <div class="work-container">
+/* ---------- WORK (PORTFOLIO STYLE) ---------- */
 
-    <h3 class="reveal">Recent Work</h3>
+.work-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
 
-    <div class="work-grid">
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
 
-      <div class="work-card reveal">
-        <div class="work-thumb"></div>
-        <div class="work-info">
-          <strong>High-energy Car Sequence</strong>
-          <p class="small">Commercial edit</p>
-        </div>
-      </div>
+.work-card {
+  background: rgba(255,255,255,0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(18px);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
 
-      <div class="work-card reveal">
-        <div class="work-thumb"></div>
-        <div class="work-info">
-          <strong>Dramatic Artist Portrait</strong>
-          <p class="small">Brand film</p>
-        </div>
-      </div>
+.work-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.18);
+}
 
-      <div class="work-card reveal">
-        <div class="work-thumb"></div>
-        <div class="work-info">
-          <strong>Midnight Echoes</strong>
-          <p class="small">Music video</p>
-        </div>
-      </div>
+.work-thumb {
+  height: 240px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.25),
+      rgba(0,0,0,0.6)
+    ),
+    linear-gradient(135deg, #000, #111);
+}
 
-    </div>
+.work-info {
+  padding: 22px;
+}
 
-    <div style="text-align:center;margin-top:40px;">
-      <a href="portfolio.html" class="btn btn-secondary" style="text-decoration:none;">
-        View All Work
-      </a>
-    </div>
+.work-info strong {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 8px;
+}
 
-  </div>
-</section>
+.work-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
 
+.work-tags {
+  display: flex;
+  gap: 10px;
+}
+
+.work-tags span {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ---------- CONTACT ---------- */
 .contact-box {
@@ -339,49 +371,69 @@ footer {
   </div>
 </section>
 
-<div class="work-card reveal">
-  <div class="work-thumb"></div>
-  <div class="work-info">
-    <strong>High-energy car sequence</strong>
-    <p class="small">Commercial edit</p>
-  </div>
-</div>
+<section id="work">
+  <div class="work-container">
 
-<div class="work-card reveal">
-  <div class="work-thumb"></div>
-  <div class="work-info">
-    <strong>Dramatic artist portrait</strong>
-    <p class="small">Brand film</p>
-  </div>
-</div>
+    <h3 class="reveal">Recent Work</h3>
 
-<div class="work-card reveal">
-  <div class="work-thumb"></div>
-  <div class="work-info">
-    <strong>Cinematic reel montage</strong>
-    <p class="small">Short-form edit</p>
-  </div>
-</div>
-    <div class="work-card reveal">
-      <div class="work-thumb"></div>
-      <div class="work-info">
-        <strong>High-energy car sequence</strong>
-        <p class="small">Commercial edit</p>
+    <div class="work-grid">
+
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>High-energy Car Sequence</strong>
+          <p class="work-desc">
+            A fast-paced commercial edit showcasing automotive excellence
+            with dynamic transitions and cinematic color grading.
+          </p>
+          <div class="work-tags">
+            <span>Commercial</span>
+            <span>2024</span>
+          </div>
+        </div>
       </div>
+
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>Dramatic Artist Portrait</strong>
+          <p class="work-desc">
+            An intimate brand film capturing the essence of creativity
+            through moody lighting and emotional storytelling.
+          </p>
+          <div class="work-tags">
+            <span>Brand Film</span>
+            <span>2024</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>Midnight Echoes</strong>
+          <p class="work-desc">
+            A visually striking music video blending urban aesthetics
+            with ethereal visual effects.
+          </p>
+          <div class="work-tags">
+            <span>Music Video</span>
+            <span>2024</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="work-card reveal">
-      <div class="work-thumb"></div>
-      <div class="work-info">
-        <strong>Dramatic artist portrait</strong>
-        <p class="small">Brand film</p>
-      </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="portfolio.html" class="btn btn-secondary" style="text-decoration:none;">
+        View All Work
+      </a>
     </div>
-  </div>
-<div style="text-align:center;margin-top:40px;">
-    <a href="portfolio.html" class="btn btn-secondary" style="text-decoration:none;display:inline-block;">View All Work</a>
+
   </div>
 </section>
+
 
 <section id="contact">
   <div class="contact-box reveal">
