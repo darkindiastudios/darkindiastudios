@@ -205,65 +205,48 @@ textarea {
 }
 
 /* ---------- WORK ---------- */
-#work {
-  padding: 120px 0;
-}
+<section id="work">
+  <div class="work-container">
 
-.work-container {
-  max-width: 1200px;   /* YouTube-like feed width */
-  margin: 0 auto;
-  padding: 0 8%;
-}
+    <h3 class="reveal">Recent Work</h3>
 
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
+    <div class="work-grid">
 
-.work-card {
-  background: var(--panel);
-  backdrop-filter: var(--blur);
-  -webkit-backdrop-filter: var(--blur);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>High-energy Car Sequence</strong>
+          <p class="small">Commercial edit</p>
+        </div>
+      </div>
 
-.work-card:hover {
-  transform: translateY(-6px);
-  background: var(--panel-strong);
-}
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>Dramatic Artist Portrait</strong>
+          <p class="small">Brand film</p>
+        </div>
+      </div>
 
-/* YouTube-style thumbnail */
-.work-thumb {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.2),
-      rgba(255,255,255,0.05)
-    ),
-    linear-gradient(135deg, #000, #111);
-}
+      <div class="work-card reveal">
+        <div class="work-thumb"></div>
+        <div class="work-info">
+          <strong>Midnight Echoes</strong>
+          <p class="small">Music video</p>
+        </div>
+      </div>
 
-.work-info {
-  padding: 16px 18px 20px;
-}
+    </div>
 
-.work-info strong {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 4px;
-}
+    <div style="text-align:center;margin-top:40px;">
+      <a href="portfolio.html" class="btn btn-secondary" style="text-decoration:none;">
+        View All Work
+      </a>
+    </div>
 
-@media (max-width: 900px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  </div>
+</section>
+
 
 /* ---------- CONTACT ---------- */
 .contact-box {
