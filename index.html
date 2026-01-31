@@ -206,8 +206,8 @@ textarea {
 
 /* ---------- WORK ---------- */
 #work {
-  max-width: 1200px;      /* keeps cards contained */
-  margin: 0 auto;         /* centers the section */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .work-grid {
@@ -236,9 +236,10 @@ textarea {
   background: var(--panel-strong);
 }
 
+/* THIS IS THE KEY FIX */
 .work-thumb {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 260px; /* fixed cinematic height (NOT aspect-ratio) */
 
   background:
     linear-gradient(
@@ -251,6 +252,7 @@ textarea {
 
 .work-info {
   padding: 22px;
+  flex-grow: 1;
 }
 
 @media (max-width: 900px) {
@@ -261,6 +263,10 @@ textarea {
   .work-grid {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+
+  .work-thumb {
+    height: 220px;
   }
 }
 
