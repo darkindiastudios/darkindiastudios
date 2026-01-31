@@ -206,67 +206,62 @@ textarea {
 
 /* ---------- WORK ---------- */
 #work {
-  max-width: 1200px;
+  padding: 120px 0;
+}
+
+.work-container {
+  max-width: 1200px;   /* YouTube-like feed width */
   margin: 0 auto;
+  padding: 0 8%;
 }
 
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
+  gap: 32px;
 }
 
 .work-card {
   background: var(--panel);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
-
-  display: flex;
-  flex-direction: column;
-
-  transition: transform 0.35s ease, background 0.35s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .work-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   background: var(--panel-strong);
 }
 
-/* THIS IS THE KEY FIX */
+/* YouTube-style thumbnail */
 .work-thumb {
   width: 100%;
-  height: 260px; /* fixed cinematic height (NOT aspect-ratio) */
-
+  aspect-ratio: 16 / 9;
   background:
     linear-gradient(
-      to bottom right,
-      rgba(255,255,255,0.18),
-      rgba(255,255,255,0.04)
+      135deg,
+      rgba(255,255,255,0.2),
+      rgba(255,255,255,0.05)
     ),
     linear-gradient(135deg, #000, #111);
 }
 
 .work-info {
-  padding: 22px;
-  flex-grow: 1;
+  padding: 16px 18px 20px;
+}
+
+.work-info strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 @media (max-width: 900px) {
-  #work {
-    max-width: 100%;
-  }
-
   .work-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .work-thumb {
-    height: 220px;
   }
 }
 
