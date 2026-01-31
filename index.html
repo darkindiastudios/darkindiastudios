@@ -207,8 +207,8 @@ textarea {
 /* ---------- WORK ---------- */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 34px;
 }
 
 .work-card {
@@ -228,7 +228,8 @@ textarea {
 }
 
 .work-thumb {
-  height: 180px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
   background:
     linear-gradient(
       135deg,
@@ -237,7 +238,11 @@ textarea {
     ),
     linear-gradient(135deg, #000, #111);
 }
-
+@media(max-width: 900px){
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .work-info { padding: 22px; }
 
 /* ---------- CONTACT ---------- */
@@ -331,9 +336,29 @@ footer {
   </div>
 </section>
 
-<section id="work">
-  <h3 class="reveal">Recent Work</h3>
-  <div class="work-grid">
+<div class="work-card reveal">
+  <div class="work-thumb"></div>
+  <div class="work-info">
+    <strong>High-energy car sequence</strong>
+    <p class="small">Commercial edit</p>
+  </div>
+</div>
+
+<div class="work-card reveal">
+  <div class="work-thumb"></div>
+  <div class="work-info">
+    <strong>Dramatic artist portrait</strong>
+    <p class="small">Brand film</p>
+  </div>
+</div>
+
+<div class="work-card reveal">
+  <div class="work-thumb"></div>
+  <div class="work-info">
+    <strong>Cinematic reel montage</strong>
+    <p class="small">Short-form edit</p>
+  </div>
+</div>
     <div class="work-card reveal">
       <div class="work-thumb"></div>
       <div class="work-info">
