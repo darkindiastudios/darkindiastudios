@@ -339,12 +339,25 @@ textarea {
   color: var(--muted);
 }
 
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<div class="contact-box">
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="reply_to" placeholder="Your email" required>
+    <textarea name="message" placeholder="Project details..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<style>
+  
 /* ---------- CONTACT ---------- */
 .contact-box {
   background: var(--panel-strong);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-
   border-radius: var(--radius);
   padding: 50px;
   border: 1px solid var(--border);
@@ -362,12 +375,48 @@ input, textarea {
   background: rgba(255,255,255,0.08);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-
   border: 1px solid var(--border);
   color: var(--text);
 }
 
-textarea { resize: none; height: 120px; }
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+button {
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: #e63946;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY"); // <-- EmailJS Public Key
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "YOUR_SERVICE_ID",
+    "YOUR_TEMPLATE_ID",
+    this
+  ).then(
+    () => {
+      alert("Message sent successfully 🚀");
+      this.reset();
+    },
+    () => {
+      alert("Failed to send message 😓");
+    }
+  );
+});
+</script>
 
 /* ---------- FOOTER ---------- */
 footer {
